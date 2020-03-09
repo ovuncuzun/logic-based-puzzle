@@ -4,12 +4,12 @@ function setCharAt(str, index, chr) {
 }
 
 function getRandomChar(riddle, index) {
-    var randomChar
+    let randomChar;
     do {
         randomChar = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1);
     } while ((index > 0 && riddle[index - 1] == randomChar) || (index < riddle.length - 1 && riddle[index + 1] == randomChar))
 
-    return randomChar
+    return randomChar;
 }
 
 function solution(riddle) {
@@ -19,5 +19,5 @@ function solution(riddle) {
             riddle = setCharAt(riddle, i, getRandomChar(riddle, i))
         }
     }
-    return riddle
+    return riddle;
 }
